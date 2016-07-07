@@ -1,0 +1,18 @@
+﻿@section scripts{
+    <script type="text/javascript">
+$(function()
+{
+        $.getJSON('/api/hello', function(load)
+        {
+            $(load).each(function(i, item)
+            {
+                $('#hello').append( item );
+            });
+        });
+});
+    </script>
+}
+
+<div id="body">
+    <ul id="hello"></ul>
+</div>
