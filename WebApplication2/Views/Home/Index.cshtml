@@ -3,7 +3,7 @@
         $(function () {
             $.getJSON('/api/contact', function (contactsJsonPayload) {
                 $(contactsJsonPayload).each(function (i, item) {
-                    $('#contacts').append('<li>' + item.Name + ' ' + item.Surname + '</li>');
+                    $('#contacts').append('<li>' + item.Name + ' ' + item.Surname + '</li> ');
                 });
             });
 
