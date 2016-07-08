@@ -8,5 +8,6 @@ namespace WebApplication2.Models
 {
     interface IContactRepository
     {
+
     }
 }
