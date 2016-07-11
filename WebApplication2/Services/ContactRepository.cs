@@ -59,6 +59,30 @@ namespace WebApplication2.Services
             return false;
         }
 
+        public bool DeleteContact(int id)
+        {
+            var ctx = HttpContext.Current;
+
+            if (ctx != null)
+            {
+                try
+                {
+                    var currentData = ((Contact[])ctx.Cache[CacheKey]).ToList();
+                    currentData.RemoveAt(id);
+                    ctx.Cache[CacheKey] = currentData.ToArray();
+
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.ToString());
+                    return false;
+                }
+            }
+
+            return false;
+        }
+
 
 
         public Contact[] GetAllContacts()
